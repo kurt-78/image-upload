@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Successful</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Upload Successful</h1>
+        
+        <div class="success-message">
+            <p>Your file has been successfully uploaded!</p>
+        </div>
+        
+        <div class="user-info">
+            <h2>User Information</h2>
+            <p><strong>Name:</strong> <%= name %></p>
+            <p><strong>Email:</strong> <%= email %></p>
+        </div>
+        
+        <div class="file-info">
+            <h2>File Information</h2>
+            <p><strong>Filename:</strong> <%= filename %></p>
+            <p><strong>Upload time (New York):</strong> <%= uploadTime %></p>
+        </div>
+        
+        <div class="file-preview">
+            <h2>File Preview</h2>
+            <% if (isImage) { %>
+                <a href="<%= fileUrl %>" target="_blank" class="image-link">
+                    <img src="<%= thumbnailUrl %>" alt="Thumbnail" class="thumbnail">
+                    <p>Click to view full image</p>
+                </a>
+            <% } else { %>
+                <p>
+                    <strong>File link:</strong> 
+                    <a href="<%= fileUrl %>" target="_blank" class="file-link">View uploaded file</a>
+                </p>
+            <% } %>
+        </div>
+        
+        <a href="/" class="back-link">Upload Another File</a>
+    </div>
+</body>
+</html>
